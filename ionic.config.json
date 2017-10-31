@@ -2,5 +2,26 @@
   "name": "projectLeagueApp",
   "app_id": "47182aef",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path":"/games",
+      "proxyUrl": "https://api-2445582011268.apicast.io/games"
+    },
+    {
+      "path": "/igdb",
+      "proxyUrl": "https://images.igdb.com/igdb"
+    },
+    {
+      "path":"/genres",
+      "proxyUrl": "https://api-2445582011268.apicast.io/genres"
+    },
+    {
+      "path":"/player_perspectives",
+      "proxyUrl": "https://api-2445582011268.apicast.io/player_perspectives"
+    }
+  ]
+
 }

@@ -6,25 +6,43 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { DataProvider } from '../providers/data/data';
+import { HttpModule } from '@angular/http';
+import { IonicStorageModule} from '@ionic/storage'; // For storing data (json)
+import { GenresPage } from '../pages/genres/genres';
+import { Keyboard } from '@ionic-native/keyboard';
+import { DetailsPage } from '../pages/details/details';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    GenresPage,
+    DetailsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    GenresPage,
+    DetailsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataProvider,
+    Keyboard,
+    InAppBrowser,
+    YoutubeVideoPlayer
   ]
 })
 export class AppModule {}
